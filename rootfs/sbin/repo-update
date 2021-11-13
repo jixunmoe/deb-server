@@ -1,0 +1,11 @@
+#!/bin/sh
+
+__setup_gpg2
+
+REPO=$1
+
+DEB_FILES="$(find /data/deb-root/debs/ -name "*.deb")"
+echo "$DEB_FILES" | xargs -d '\n' aptly repo add "$REPO"
+echo "$DEB_FILES" | xargs -d '\n' rm -f
+
+aptly publish update "$REPO"

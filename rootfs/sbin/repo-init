@@ -1,0 +1,8 @@
+#!/bin/sh
+
+__setup_gpg2
+
+REPO="$1"
+
+aptly repo create "$REPO"
+aptly publish repo -distribution="$REPO" "$REPO"

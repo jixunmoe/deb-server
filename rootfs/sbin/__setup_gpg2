@@ -1,0 +1,8 @@
+#!/bin/sh
+
+if [ ! -d /root/.gnupg ] && [ -f /data/deb-root/.private.key ]; then
+    gpg --import /data/deb-root/.private.key
+
+    # Trust imported key
+    gpg --export-ownertrust | sed 's/:.*/:5:/' | gpg --import-ownertrust
+fi

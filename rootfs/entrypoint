@@ -1,0 +1,5 @@
+#!/bin/sh
+
+__setup_gpg2
+
+aptly serve

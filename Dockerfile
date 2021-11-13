@@ -13,5 +13,5 @@ VOLUME [ "/data/deb-root" ]
 
 WORKDIR /data/deb-root
 
-EXPOSE 5003
+EXPOSE 8080
 CMD [ "/bin/sh", "/entrypoint" ]

@@ -2,4 +2,4 @@
 
 __setup_gpg2
 
-aptly serve
+aptly api serve
